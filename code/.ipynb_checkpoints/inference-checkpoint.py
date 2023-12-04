@@ -21,10 +21,9 @@ def input_fn(request_body, request_content_type):
     print(request_content_type)
     
     array = convert_to_numpy_array(request_body)
-    print("***ip-array**",array)
     
+    #test data capture by removing a row from input request
     trans_array= np.delete(array,0,0) 
-    print("***trans-array**",trans_array)
 
     return trans_array
     
@@ -32,8 +31,7 @@ def predict_fn(input_object, model):
     ###########################################
     # Do your custom preprocessing logic here #
     ###########################################
-    print(type(input_object))
-    print(input_object)
+
     print("********calling model*********")
     predictions = model.predict(input_object)
     return predictions
