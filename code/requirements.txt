@@ -1,0 +1,5 @@
+boto3
+requests
+nltk
+numpy
+Python-IO
